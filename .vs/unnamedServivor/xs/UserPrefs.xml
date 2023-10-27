@@ -1,32 +1,32 @@
 ﻿<Properties StartupConfiguration="{5570D1A0-7930-10F0-DACD-5B66FB04F3C0}|">
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/HUD.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Gear.cs">
     <Files>
-      <File FileName="Assets/Scripts/Player.cs" />
-      <File FileName="Assets/Scripts/GameManager.cs" Line="14" Column="5" />
-      <File FileName="Assets/Scripts/Reposition.cs" />
-      <File FileName="Assets/Scripts/Enemy.cs" />
-      <File FileName="Assets/Scripts/PoolManager.cs" />
-      <File FileName="Assets/Scripts/Spawner.cs" />
-      <File FileName="Assets/Scripts/Bullet.cs" />
-      <File FileName="Assets/Scripts/Weapon.cs" />
-      <File FileName="Assets/Scripts/Scanner.cs" />
-      <File FileName="Assets/Scripts/HUD.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Player.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/GameManager.cs" Line="15" Column="24" />
+      <File FileName="Assets/Scripts/Reposition.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Enemy.cs" Line="18" Column="18" />
+      <File FileName="Assets/Scripts/PoolManager.cs" Line="10" Column="1" />
+      <File FileName="Assets/Scripts/Spawner.cs" Line="5" Column="37" />
+      <File FileName="Assets/Scripts/Bullet.cs" Line="5" Column="36" />
+      <File FileName="Assets/Scripts/Weapon.cs" Line="12" Column="23" />
+      <File FileName="Assets/Scripts/Scanner.cs" Line="10" Column="22" />
+      <File FileName="Assets/Scripts/HUD.cs" Line="9" Column="37" />
+      <File FileName="Assets/Scripts/Follow.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/ItemData.cs" Line="17" Column="20" />
+      <File FileName="Assets/Scripts/Item.cs" Line="53" Column="14" />
+      <File FileName="Assets/Scripts/Gear.cs" Line="49" Column="60" />
     </Files>
     <Pads>
       <Pad Id="ClassPad">
-        <State name="__root__">
-          <Node name="unnamedServivor" expanded="True">
-            <Node name="Assembly-CSharp" expanded="True" />
-          </Node>
-        </State>
+        <State name="__root__" />
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="fc9c7231-47a6-4885-8520-bb3f0c21a84f" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="ae0fd581-5571-4f89-8312-e48906559364" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
