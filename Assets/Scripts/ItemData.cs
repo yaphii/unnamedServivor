@@ -10,4 +10,5 @@ public class ItemData : ScriptableObject
     public Sprite itemIcon;	//ㄹㅔ벨별로 상승하는 능력치    [Header("# Level Data")]	//0레벨 데미지    public float baseDamage;    //근접: 갯수     원거리: 관통      public int baseCount;    //레벨별 수치     public float[] damages;    public int[] counts;    [Header("# Weapon")]//특수한 무기
     //계속 쏘는 투사체 프리
     public GameObject projectile;
+    public Sprite hand;//Hand
 }
