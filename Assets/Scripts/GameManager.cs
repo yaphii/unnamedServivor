@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
 	public float gameTime;
     public float maxGameTime = 2*10f;
 
+    public bool isLive;//시간컨트롤
+
     [Header("# Player Info")]
     //체력 최대체h
     public int health;
@@ -44,7 +46,10 @@ public class GameManager : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    { 
+        if(!isLive)
+            return;
+
         gameTime += Time.deltaTime;
 
         if (gameTime > maxGameTime)
@@ -63,5 +68,16 @@ public class GameManager : MonoBehaviour
             uiLevelUp.Show();
         }
 
+    }
+
+    //시간컨트롤 
+    public void Stop(){
+        isLive = false;
+        Time.timeScale = 0;//유니티의 실제 돌아가는 시간의 크기를 확 줄여 버릴 수 있다. 원래는 Time.timeScale = 1//0이되면시간이멈춘다 
+    }
+    //시간컨트롤 
+    public void Resume(){
+        isLive = true;
+        Time.timeScale = 1;//Time.timeScale = 2면 두배만큼 빨라짐. 자동게임에
     }
 }
