@@ -37,6 +37,9 @@ public class GameManager : MonoBehaviour
     {
         //시작할때 현재 체력과 최대 체력이 같도록 설정  
         health = maxHealth;
+
+        //임시
+        uiLevelUp.Select(0);
     }
 
     // Update is called once per frame
