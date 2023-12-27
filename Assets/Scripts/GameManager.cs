@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -61,7 +62,8 @@ public class GameManager : MonoBehaviour
     public void GetExp()
     {
         exp++;
-        if(exp == nextExp[level])
+        //Min 함수 사용해 최고경험치를 그대로 사용하도록 변경  
+        if(exp == nextExp[Math.Min(level, nextExp.Length-1)])
         {
             level++; //level을 올리고 경험치는 초기화
             exp = 0;

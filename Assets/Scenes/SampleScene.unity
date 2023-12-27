@@ -10650,7 +10650,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 6.3166666
+  orthographic size: 5.3333335
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -18246,12 +18246,13 @@ MonoBehaviour:
   uiLevelUp: {fileID: 1959202243}
   gameTime: 0
   maxGameTime: 20
+  isLive: 0
   health: 0
   maxHealth: 100
   kill: 0
   level: 0
   exp: 0
-  nextExp: 03000000040000000a0000006400000096000000d20000001801000068010000c201000058020000
+  nextExp: 0100000002000000030000000400000005000000060000000700000008000000090000000a000000
 --- !u!4 &1825976743
 Transform:
   m_ObjectHideFlags: 0
