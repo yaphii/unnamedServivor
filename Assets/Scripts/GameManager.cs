@@ -36,13 +36,12 @@ public class GameManager : MonoBehaviour
 		instance = this;
 	}
 
-	void Start()
+	public void GameStart()
     {
         //시작할때 현재 체력과 최대 체력이 같도록 설정  
         health = maxHealth;
-
-        //임시
         uiLevelUp.Select(0);
+        isLive = true;
     }
 
     // Update is called once per frame

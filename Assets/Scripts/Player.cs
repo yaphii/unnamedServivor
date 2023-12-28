@@ -61,5 +61,5 @@ public class Player : MonoBehaviour
 			sr.flipX = inputVec.x < 0;
 		}
 
-							}
+	}
 }

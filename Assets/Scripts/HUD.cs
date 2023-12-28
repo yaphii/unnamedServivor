@@ -59,5 +59,5 @@ public class HUD : MonoBehaviour
             default:
                 break;
         }
-         }
+    }
 }
