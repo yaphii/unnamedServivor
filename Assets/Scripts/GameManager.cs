@@ -11,7 +11,8 @@ public class GameManager : MonoBehaviour
     public Player player;
     public PoolManager pool;
     public LevelUp uiLevelUp;
-    public GameObject uiResult;
+    public Result uiResult;
+    public GameObject enemyCleaner;
 
     [Header("# Game Control")]
 	//소환레벨 적용하기
@@ -42,7 +43,7 @@ public class GameManager : MonoBehaviour
         //시작할때 현재 체력과 최대 체력이 같도록 설정  
         health = maxHealth;
         uiLevelUp.Select(0);
-        isLive = true;
+        Resume();
     }
 
     public void GameOver(){
@@ -53,9 +54,29 @@ public class GameManager : MonoBehaviour
     IEnumerator GameOverRoutine(){
         isLive = false;
         yield return new WaitForSeconds(0.5f);
-        uiResult.SetActive(true);
+        uiResult.gameObject.SetActive(true);
+        uiResult.Lose();
         Stop();
     }
+
+
+    public void GameVictory(){
+        StartCoroutine(GameVictoryRoutine());
+    }
+
+
+    IEnumerator GameVictoryRoutine(){
+        isLive = false;
+        enemyCleaner.SetActive(true);
+
+        yield return new WaitForSeconds(0.5f);
+
+        uiResult.gameObject.SetActive(true);
+        uiResult.Win();
+        Stop();
+    }
+
+
     public void GameRetry(){
         SceneManager.LoadScene(0);
     }
@@ -71,11 +92,15 @@ public class GameManager : MonoBehaviour
         if (gameTime > maxGameTime)
         {
             gameTime = maxGameTime;
+            GameVictory();
                           }
     }
 
     public void GetExp()
     {
+        if(!isLive)
+            return;
+
         exp++;
         //Min 함수 사용해 최고경험치를 그대로 사용하도록 변경  
         if(exp == nextExp[Math.Min(level, nextExp.Length-1)])
