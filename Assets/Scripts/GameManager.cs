@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
@@ -10,6 +11,7 @@ public class GameManager : MonoBehaviour
     public Player player;
     public PoolManager pool;
     public LevelUp uiLevelUp;
+    public GameObject uiResult;
 
     [Header("# Game Control")]
 	//소환레벨 적용하기
@@ -43,6 +45,20 @@ public class GameManager : MonoBehaviour
         isLive = true;
     }
 
+    public void GameOver(){
+        StartCoroutine(GameOverRoutine());
+    }
+
+
+    IEnumerator GameOverRoutine(){
+        isLive = false;
+        yield return new WaitForSeconds(0.5f);
+        uiResult.SetActive(true);
+        Stop();
+    }
+    public void GameRetry(){
+        SceneManager.LoadScene(0);
+    }
 
     // Update is called once per frame
     void Update()

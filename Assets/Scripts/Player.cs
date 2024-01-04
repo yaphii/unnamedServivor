@@ -82,6 +82,7 @@ public class Player : MonoBehaviour
 			
 			//플레이어의 죽는 에니메이션 재생
 			anim.SetTrigger("Dead");
+			GameManager.instance.GameOver();
 		}
 	}
 }
