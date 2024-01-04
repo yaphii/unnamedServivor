@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
@@ -21,7 +20,7 @@ public class GameManager : MonoBehaviour
 
     [Header("# Player Info")]
     //체력 최대체h
-    public int health;
+    public float health;
     public int maxHealth = 100;
 	//킬수  레벨  경험치
 	public int kill;
@@ -43,6 +42,7 @@ public class GameManager : MonoBehaviour
         uiLevelUp.Select(0);
         isLive = true;
     }
+
 
     // Update is called once per frame
     void Update()

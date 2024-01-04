@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -61,5 +62,26 @@ public class Player : MonoBehaviour
 			sr.flipX = inputVec.x < 0;
 		}
 
+
+	}
+
+	//몬스터랑 부딫히면 계속해서 피를 깎아먹음.
+	void OnCollisionStay2D(Collision2D collision){
+		if(!GameManager.instance.isLive)//죽었으면 안깎임
+			return;
+
+		GameManager.instance.health -= Time.deltaTime * 10;
+
+		//플레이어의 사망
+		if(GameManager.instance.health < 0){
+			// 플레이어가 가지고 있는 자식들 비활성화
+			for (int i = 2; i < transform.childCount; i++)
+			{
+				transform.GetChild(i).gameObject.SetActive(false);
+			}
+			
+			//플레이어의 죽는 에니메이션 재생
+			anim.SetTrigger("Dead");
+		}
 	}
 }
