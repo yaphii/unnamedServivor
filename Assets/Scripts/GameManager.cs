@@ -32,17 +32,20 @@ public class GameManager : MonoBehaviour
     //각 레벨별 필요 경험를 보관할 배열변
     //public int[] nextExp = { 10,30,60,100,150,210,280,360,450,600};
     public int[] nextExp = { 3,5,10,100,150,210,280,360,450,600};
+    public int playerId;
 
     private void Awake()
 	{
 		instance = this;
 	}
 
-	public void GameStart()
+	public void GameStart(int id)
     {
+        playerId = id;
         //시작할때 현재 체력과 최대 체력이 같도록 설정  
         health = maxHealth;
-        uiLevelUp.Select(0);
+        player.gameObject.SetActive(true);
+        uiLevelUp.Select(playerId % 2);
         Resume();
     }
 

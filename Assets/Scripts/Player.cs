@@ -7,13 +7,14 @@ using UnityEngine.InputSystem;
 public class Player : MonoBehaviour
 {
 	public Vector2 inputVec;
-	public Rigidbody2D rigid;
+	Rigidbody2D rigid;
 	public float speed;
-	public SpriteRenderer sr;
+	SpriteRenderer sr;
 	Animator anim;
 	public Scanner scanner;
 
 	public Hand[] hands;
+	public RuntimeAnimatorController[] animCon;
 	private void Awake()
 	{
 		rigid = GetComponent<Rigidbody2D>();
@@ -21,6 +22,11 @@ public class Player : MonoBehaviour
 		anim = GetComponent<Animator>();
 		scanner = GetComponent<Scanner>();
 		hands = GetComponentsInChildren<Hand>(true);
+	}
+
+	void OnEnable(){
+		speed *= Character.Speed;
+		anim.runtimeAnimatorController = animCon[GameManager.instance.playerId];
 	}
 
 	void Update(){

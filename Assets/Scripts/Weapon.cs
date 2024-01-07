@@ -29,9 +29,9 @@ public class Weapon : MonoBehaviour
         transform.localPosition = Vector3.zero;
 
         //property set
-                                 id = data.itemId;
-        damage = data.baseDamage;
-        count = data.baseCount;
+        id = data.itemId;
+        damage = data.baseDamage * Character.Damage;
+        count = data.baseCount + Character.Count;
         for (int index = 0; index < GameManager.instance.pool.prefabs.Length ; index++)
         {
             if(data.projectile == GameManager.instance.pool.prefabs[index])
@@ -44,12 +44,12 @@ public class Weapon : MonoBehaviour
         switch (id)
         {
             case 0:
-                speed = 150;//시계방향 회전
+                speed = 150* Character.WeaponSpeed;//시계방향 회전
                 Batch();
                 break;
 
             default:
-				speed = 0.3f;//연사 속도 
+				speed = 0.5f * Character.WeaponRate;//연사 속도 
 						break;
         }
 
