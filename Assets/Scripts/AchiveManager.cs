@@ -11,16 +11,18 @@ public class AchiveManager : MonoBehaviour
 
     public GameObject[] lockCharacter;
     public GameObject[] unlockCharacter;
+    public GameObject uiNotice;
 
     //업적 을 열거형으로 표현
     enum Achive {UnlockPotato, UnlockBean}
 
     //업적 데이터들을 저장해둘 배열 선언 및 초기화
     Achive[] achives;
-
+    WaitForSecondsRealtime wait;
     void Awake(){
         //주어진 열거형의 데이터를 모두 가져오는 함수
         achives = (Achive[])Enum.GetValues(typeof(Achive));
+        wait=new WaitForSecondsRealtime(5);
         if(!PlayerPrefs.HasKey("MyData")){
             Init();
         }
@@ -74,6 +76,20 @@ public class AchiveManager : MonoBehaviour
 
         if(isAchive && PlayerPrefs.GetInt(achive.ToString())==0){
             PlayerPrefs.SetInt(achive.ToString(),1);
+
+
+            for (int i = 0; i < uiNotice.transform.childCount; i++)
+            {
+                bool isActive = i == (int)achive;
+                uiNotice.transform.GetChild(i).gameObject.SetActive(isActive);
+            }
+            StartCoroutine(NoticeRoutine());
         }
+    }
+
+    IEnumerator NoticeRoutine(){
+        uiNotice.SetActive(true);
+        yield return wait;
+        uiNotice.SetActive(false);
     }
 }
