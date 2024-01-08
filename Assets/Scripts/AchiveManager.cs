@@ -31,7 +31,7 @@ public class AchiveManager : MonoBehaviour
         PlayerPrefs.SetInt("MyData",1);
         foreach (Achive achive in achives)
         {
-            PlayerPrefs.SetInt(achive.ToString(),1);
+            PlayerPrefs.SetInt(achive.ToString(),0);
         }
     }
 
@@ -50,8 +50,30 @@ public class AchiveManager : MonoBehaviour
         }
     }
 
-    void Update()
+    //업적달성을 확인
+    void LateUpdate()
     {
-        
+        foreach (Achive achive in achives)
+        {
+            CheckAchive(achive);
+        }
+    }
+
+    void CheckAchive(Achive achive){
+        bool isAchive = false;
+        //어느 업적인지?
+        switch(achive){
+            case Achive.UnlockPotato:
+                isAchive = (GameManager.instance.kill >= 10);
+                break;
+
+            case Achive.UnlockBean:
+                isAchive = (GameManager.instance.gameTime == GameManager.instance.maxGameTime);
+                break;
+        }
+
+        if(isAchive && PlayerPrefs.GetInt(achive.ToString())==0){
+            PlayerPrefs.SetInt(achive.ToString(),1);
+        }
     }
 }
