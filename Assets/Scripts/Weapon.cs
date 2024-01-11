@@ -83,14 +83,14 @@ public class Weapon : MonoBehaviour
 
 
             //위치와 회전을 초기화
-                                         bullet.localPosition = Vector3.zero;
+            bullet.localPosition = Vector3.zero;
             bullet.localRotation = Quaternion.identity;
 
             //회전 후 자신의 위쪽 방향으로 1.5이동
             Vector3 rotVec = Vector3.forward * 360 * i / count;
             bullet.Rotate(rotVec);
             bullet.Translate(bullet.up * 1.5f, Space.World);
-            bullet.GetComponent<Bullet>().Init(damage, -1, Vector3.zero);//-1 관통???????무한????? -1 is Infinity
+            bullet.GetComponent<Bullet>().Init(damage, -100, Vector3.zero);//-1 관통???????무한????? -100 is Infinity
 
 																				}
 	}
