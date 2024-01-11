@@ -11107,7 +11107,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 20.4
+  orthographic size: 25.733334
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -21065,14 +21065,14 @@ MonoBehaviour:
   uiResult: {fileID: 2005067834}
   enemyCleaner: {fileID: 65586688}
   gameTime: 0
-  maxGameTime: 20
+  maxGameTime: 300
   isLive: 0
   health: 0
   maxHealth: 100
   kill: 0
   level: 0
   exp: 0
-  nextExp: 0100000002000000030000000400000005000000060000000700000008000000090000000a000000
+  nextExp: 03000000050000000a0000006400000096000000d20000001801000068010000c201000058020000
   playerId: 0
 --- !u!4 &1825976743
 Transform:
@@ -26776,6 +26776,7 @@ MonoBehaviour:
     spriteType: 1
     health: 15
     speed: 2.4
+  levelTime: 0
 --- !u!1 &2107642500
 GameObject:
   m_ObjectHideFlags: 0

@@ -49,7 +49,7 @@ public class Bullet : MonoBehaviour
         }
 	}
 
-	void OnTriggerEnter2D(Collider2D collision){//플레이어가 가지고있는 area가 아니면 비활성화 
+	void OnTriggerExit2D(Collider2D collision){//플레이어가 가지고있는 area가 아니면 비활성화 
 		if (!collision.CompareTag("Area") || per == -100) 
             return;
 
