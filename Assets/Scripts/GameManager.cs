@@ -81,7 +81,7 @@ public class GameManager : MonoBehaviour
 
         uiResult.gameObject.SetActive(true);
         uiResult.Win();
-        Stop();
+        Stop();  
         
         AudioManager.instance.PlayBgm(false);
         AudioManager.instance.PlaySfx( AudioManager.Sfx.Win );
